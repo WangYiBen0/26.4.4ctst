@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+\usepackage[heading]{ctex}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ulem}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}
+% \usepackage{newtxtext,newtxmath}
+\usepackage{epigraph}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{fancyvrb}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{xeCJKfntef,xcolor}
+%\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,
+	urlcolor=blue,
+	citecolor=cyan,
+}
+\usetikzlibrary{arrows.meta}
+\tikzset{global scale/.style={
+	scale=#1,
+	every node/.append style={scale=#1}
+  }
+}
+\tcbset{
+	colback=white,
+	colframe=black,
+	boxrule=0.5pt
+}
+\fvset{
+	tabsize=0,
+	frame=single,
+	framesep=3mm,
+	rulecolor=\color{blue!80},
+	numbers=left,
+	numbersep=5pt
+}
+\lstset{
+	breaklines = true,
+	keepspaces = true,
+	basicstyle = \ttfamily,
+	numberstyle = \footnotesize\ttfamily\color{gray},
+	numbers = left,
+	columns = flexible,
+	framexleftmargin = 5pt,
+	xleftmargin = 5pt,
+	numbersep = 12pt,
+	keywordstyle = \color{black}, %\color{blue!70},
+	commentstyle = \color{black}, %\color{green!70},
+	frame = single,
+	frameround = tttt,
+	rulecolor = \color{blue},
+	language = c++,
+	escapeinside = {(*@}{@*)}
+}
+\xeCJKsetup{
+	underdot/symbol = {\color{black}.}
+}
+\ctexset{
+	section = {
+		format = \centering\Large\heiti,
+		numbering = true,
+		number = {},
+		aftername = {}
+	},
+	subsection = {
+		format = \fontsize{13pt}{\baselineskip}\heiti,
+		numbering = true,
+		number = {},
+		aftername = {\quad【},
+		aftertitle = {】}
+	}
+}
+\geometry{
+	a4paper,
+	scale=0.8
+}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+\newcommand{\mrow}[2]{{\multirow{#1}{*}{#2}}}
+\newcommand{\mcol}[2]{{\multicolumn{#1}{c|}{#2}}}
+\newcommand{\CJKdotbf}[1]{{\textbf{\CJKunderdot{#1}}}}
+\newcommand{\filename}[1]{{\textbf{\textit{#1}}}}
+\newcommand{\slbf}[1]{\emph{\textbf{#1}}}
+\newcommand{\Yes}[0]{$\sqrt{}$}
+\newcommand{\No}[0]{$\times$}
+\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun} % ------------------------------------------------- Windows
+% \setCJKmainfont[BoldFont=FandolHei-Regular.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf} % -- Linux
+\setmonofont{Consolas} % ------------------------------------------------------------------------------------ Windows
+\setlist[itemize]{itemsep=0pt,partopsep=0pt,parsep=0pt,topsep=10pt}
+\setlist[enumerate]{itemsep=0pt,partopsep=0pt,parsep=0pt,topsep=10pt}
+\setlist[itemize,1]{leftmargin=35pt}
+\setlist[enumerate,1]{leftmargin=35pt}
+\newtheorem{lem}{引理}[section]
+\newcommand{\docTitle}{NOIP模拟赛}
+\newcommand{\docAuthor}{\text{Gold \& yyy}}
+\newcommand{\fancyheadLeftText}{\docTitle}
+\newcommand{\fancyheadRightText}{}
+\title{\Huge \textbf{NOIP模拟赛}}
+\author{$\docAuthor$}
+\hypersetup{
+	pdftitle={\docTitle},
+	pdfauthor={\docAuthor}
+}
+\date{\heiti \Large{08:00$\sim$11:40}}
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0pt}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage 页\quad 共 \pageref{LastPage} 页}
+% \textwidth=478pt
+% \tabcolsep=6pt
+% total_width=\textwidth-2*columns*\tabcolsep-(columns+1)*0.5pt
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{78.9020375pt}|m{78.9020375pt}|m{88.9020375pt}|m{108.9020375pt}|}
+        \hline 题目名称 & 星光站 & 突触 & 虚空的召唤 & 十六号-塔 \\
+        \hline 原题 & 无 & \href{https://codeforces.com/problemset/problem/1666/E}{Even} \href{https://www.luogu.com.cn/problem/P12818}{Split} & 无 & \href{https://atcoder.jp/contests/agc032/tasks/agc032_e}{Modulo Pairing} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\newpage
+\renewcommand\headrulewidth{0.5pt}
+\fancyhead[L]{\footnotesize \fancyheadLeftText}
+
+\section{星光站（starlight）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 星光站（starlight）}
+
+题意转化为求有多少对 $(i,j)$ 使得 $i<j$ 且\textbf{不存在} $a_k$ 和 $x$ 使得 $a_i\oplus x<a_k\oplus x<a_j\oplus x$。
+
+注意到如果存在 $a_j\oplus x<a_k\oplus x<a_i\oplus x$，那么将 $x$ 改为 $x\oplus (2^{31}-1)$ 则会出现 $a_i\oplus x<a_k\oplus x<a_j\oplus x$。
+
+所以可以将条件改为 $i<j$ 且\textbf{不存在} $a_k$ 和 $x$ 使得 $a_i\oplus x<a_k\oplus x<a_j\oplus x$ 或者使得 $a_j\oplus x<a_k\oplus x<a_i\oplus x$。
+
+于是可以发现 $i,j$ 是可以互换的，那么 $i<j$ 的条件就没用了，只需最后除以 $2$ 即可。
+
+首先显然 $x=0$ 时要合法，所以先将 $a$ 从小到大排序，这样只有相邻两个会合法，所以考虑对每一个相邻对判断其是否合法。
+
+设 $h(x,y)=\operatorname{highbit}(x\oplus y)$，即二进制下 $x,y$ 的最高不同位。
+
+\begin{lem}
+    若序列 $a$ 单调递增，则 $\forall 1\le i<j< |a|,h(a_i,a_j)\le h(a_i,a_{j+1})$。
+\end{lem}
+
+\begin{proof}
+    由于 $a_i<a_j$，根据 $h(a_i,a_j)$ 表示二进制下 $a_i,a_j$ 的最高不同位可知 $a_i$ 这一位为 $0$，$a_j$ 这一位为 $1$。
+
+    同理，$a_j$ 的第 $h(a_j,a_{j+1})$ 位为 $0$，所以 $h(a_i,a_j)\neq h(a_j,a_{j+1})$。
+
+    显然，对于任意两个整数 $A, B$，若 $\operatorname{highbit}(A) \neq \operatorname{highbit}(B)$，则：
+$$\operatorname{highbit}(A \oplus B) = \max(\operatorname{highbit}(A), \operatorname{highbit}(B))$$
+
+    所以可以得到：
+
+    $$
+    \begin{aligned}
+h(a_i, a_{j+1}) &= \operatorname{highbit}(a_i \oplus a_{j+1}) \\
+&= \operatorname{highbit}\big((a_i \oplus a_j) \oplus (a_j \oplus a_{j+1})\big) \\
+&= \max\big(\operatorname{highbit}(a_i \oplus a_j), \operatorname{highbit}(a_j \oplus a_{j+1})\big) \\
+&= \max\big(h(a_i, a_j), h(a_j, a_{j+1})\big) \\
+&\ge h(a_i, a_j)
+    \end{aligned}
+    $$
+
+    
+    
+\end{proof}
+
+\begin{lem}
+    若 $a,b,c$ 互不相同且 $h(a,b)<h(b,c)$，则不存在非负整数 $x$ 使得 $a\oplus x<c\oplus x<b\oplus x$。
+\end{lem}
+
+\begin{proof}
+    显然对于任意非负整数 $x$，均有 $h(a\oplus x,b\oplus x)=h(a,b)$，于是，只需证 $a<c<b$ 不成立。
+
+    首先，$h(a,c)=\max\big(h(a,b),h(b,c)\big)=h(b,c)$。
+
+    设 $H=h(a,c)=h(b,c)$，于是 $a,c$ 第 $H$ 位不同，$b,c$ 第 $H$ 位不同，所以 $a,b$ 第 $H$ 位相同，根据 $h()$ 的定义得若 $c$ 大于 $a$ 则 $c$ 大于 $b$，若 $c$ 小于 $a$ 则 $c$ 小于 $b$，所以不可能 $a<c<b$。
+\end{proof}
+
+于是，我们排完序之后就只需要判断 $h(a_i,a_{i+1})$ 是否同时小于 $h(a_{i+1},a_{i+2})$ 和 $h(a_{i-1},a_i)$ 即可。
+
+时间复杂度 $O(n\log n)$，瓶颈在于排序。
+
+\newpage
+
+\section{突触（synapse）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 突触（synapse）}
+
+感觉要二分但是不会，那么先想想怎么判断是否有解。
+
+不防考虑如何判断强制 $\min_{i}(x_i-x_{i-1})\ge L,\max_{i}(x_i-x_{i-1})\le R$ 时是否有解，即所有 $x_i-x_{i-1}$ 都在 $[L,R]$ 中时是否有解。
+
+考虑设 $xl_i,xr_i$ 分别表示只考虑所有 $j\le i$，要求 $a_j\le x_j\le a_{j+1}$ 时，$x_i$ 能取 $[xl_i,xr_i]$，这个东西显然可以 $O(n)$ 递推：
+
+\begin{itemize}
+    \item $xl_i=\max(a_i,xl_{i-1}+L)$；
+    \item $xr_i=\min(a_{i+1},xr_{i-1}+R)$。
+\end{itemize}
+
+随后只要判断 $l$ 是否在 $[xl_n,xr_n]$ 中即可。
+
+发现上下两个式子一点关系都没有，所以可以将 $L,R$ 分别二分得到。
+
+时间复杂度 $O(n\log V)$。
+
+\newpage
+
+\section{虚空的召唤（void）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 虚空的召唤（void）}
+
+首先我们可以将题目中 $N(u)$ 的定义改为与其直接相邻的点的集合，不包括自身，这显然不会影响答案。
+
+如果我们确定了 $u$ 可以成为答案的其中一个点，那么我们显然可以 $O(n+m)$ 求出答案，只需将与 $u$ 相邻的点标记为 $1$，其余的点标记为 $0$，然后对每个点求出与其相邻的点中有多少个 $1$ 即可。
+
+于是考虑找到答案中的一个点。
+
+\begin{lem}
+    如果 $u$ 的度数是奇数，那么 $u$ 一定可以成为答案的一个端点。
+\end{lem}
+
+\begin{proof}
+    首先证明 $\sum_{v\in N(u)} |N(u)\cap N(v)|$ 为偶数。
+
+    考察每一条边对这个的贡献，对于一条边 $\{x,y\}$，必须要当 $x$ 与 $u$ 直接相连，才会对 $|N(u)\cap N(y)|$ 贡献 $1$，但是只有当 $y$ 与 $u$ 也相邻时，才会对上面的式子贡献 $1$。但是此时，由于 $y$ 与 $u$ 相邻，$x$ 也与 $u$ 相邻，所以会再对上面的式子贡献 $1$。
+
+    于是每条边要么对上面的式子贡献 $0$，要么贡献 $2$，所以 $\sum_{v\in N(u)} |N(u)\cap N(v)|$ 为偶数。
+
+    由于与 $u$ 相邻的点数量为奇数，但是它们与 $u$ 的邻域交大小的和为偶数，奇数个数的和为偶数，所以其中一定有一个偶数。
+\end{proof}
+
+\begin{lem}
+    如果所有点的度数都是偶数，那么对于任意一个点 $u$，$u$ 都可以成为答案的一个端点。
+\end{lem}
+
+\begin{proof}
+    考虑 $\sum_{v\neq u}|N(u)\cap N(v)|$ 是什么。
+
+    可以看成是先选一个不等于 $u$ 的点 $v$，再选一个与 $u,v$ 都相邻的点 $w$ 的方案数，那也就可以看成先选一个与 $u$ 直接相邻的点 $w$，再选一个与 $w$ 直接相邻的不等于 $u$ 的点 $v$ 的方案数，即 $\sum_{v\in N(u)}deg_v-deg_u$，可以发现这是个偶数。
+
+    所以 $\sum_{v\neq u}|N(u)\cap N(v)|$ 为偶数，但是注意到总点数为偶数，去掉 $u$ 之后就只有奇数个点，那么奇数个数的和为偶数，其中就必有一个偶数。
+\end{proof}
+
+于是，我们可以 $O(n+m)$ 找出一个点，再 $O(n+m)$ 找出另一个点，时间复杂度 $O(n+m)$。
+
+\newpage
+
+\section{十六号-塔（tower）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 十六号-塔（tower）}
+
+接下来的 $n$ 代表题目中的序列长度。
+
+题目相当于要让所有数两两匹配，要让匹配的两个数之和 $\bmod\ m$ 之后的最大值最小。
+
+如果我们不 $\bmod\ m$，那这是一个相当简单的问题，直接将第一个数与最后一个数匹配，将第二个数与倒数第二个数匹配，以此类推即可。
+
+如果 $\bmod\ m$ 会发生什么？如果两个数之和大于等于 $m$ 那么就会减去 $m$，所以不能直接贪心。
+
+考虑将原序列复制成两份，左边一份都减 $m$，右边一份不变，然后拼接起来，得到序列 $b$。
+
+发现任意一个长度为 $n$ 的区间都会包含原序列的所有数，现在我们只要给这个区间两两匹配使得和均非负，并且最大和最小，发现还是第一个数与最后一个数匹配等等，而且不难证明最优解一定是这其中一个区间的匹配方式。
+
+于是我们只需要找到这个区间即可，也就是要找从两边往中间匹配后没有负数的最靠左的区间。
+
+考虑依次找出长度为 $2,4,6,\dots n$ 的合法的最靠左区间。
+
+初始设 $l=n+1,r=n$，每次 $l\leftarrow l-1,r\leftarrow r+1$，如果 $b_l+b_r<0$ 了就把两个数都加 $1$，如果 $b_{l-1}+b_{r-1}\ge 0$ 了就把两个数都减 $1$。
+
+这样最后就能找到答案，时间复杂度 $O(n)$。
+
+\end{document}

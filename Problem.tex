@@ -1,0 +1,770 @@
+\documentclass[12pt]{article}
+\usepackage[heading]{ctex}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ulem}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}
+% \usepackage{newtxtext,newtxmath}
+\usepackage{epigraph}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{fancyvrb}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{xeCJKfntef,xcolor}
+%\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,
+	urlcolor=blue,
+	citecolor=cyan,
+}
+\usetikzlibrary{arrows.meta}
+\tikzset{global scale/.style={
+	scale=#1,
+	every node/.append style={scale=#1}
+  }
+}
+\tcbset{
+	colback=white,
+	colframe=black,
+	boxrule=0.5pt
+}
+\fvset{
+	tabsize=0,
+	frame=single,
+	framesep=3mm,
+	rulecolor=\color{blue!80},
+	numbers=left,
+	numbersep=5pt
+}
+\lstset{
+	breaklines = true,
+	keepspaces = true,
+	basicstyle = \ttfamily,
+	numberstyle = \footnotesize\ttfamily\color{gray},
+	numbers = left,
+	columns = flexible,
+	framexleftmargin = 5pt,
+	xleftmargin = 5pt,
+	numbersep = 12pt,
+	keywordstyle = \color{black}, %\color{blue!70},
+	commentstyle = \color{black}, %\color{green!70},
+	frame = single,
+	frameround = tttt,
+	rulecolor = \color{blue},
+	language = c++,
+	escapeinside = {(*@}{@*)}
+}
+\xeCJKsetup{
+	underdot/symbol = {\color{black}.}
+}
+\ctexset{
+	section = {
+		format = \centering\Large\heiti,
+		numbering = true,
+		number = {},
+		aftername = {}
+	},
+	subsection = {
+		format = \fontsize{13pt}{\baselineskip}\heiti,
+		numbering = true,
+		number = {},
+		aftername = {\quad【},
+		aftertitle = {】}
+	}
+}
+\geometry{
+	a4paper,
+	scale=0.8
+}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+\newcommand{\mrow}[2]{{\multirow{#1}{*}{#2}}}
+\newcommand{\mcol}[2]{{\multicolumn{#1}{c|}{#2}}}
+\newcommand{\CJKdotbf}[1]{{\textbf{\CJKunderdot{#1}}}}
+\newcommand{\filename}[1]{{\textbf{\textit{#1}}}}
+\newcommand{\slbf}[1]{\emph{\textbf{#1}}}
+\newcommand{\Yes}[0]{$\sqrt{}$}
+\newcommand{\No}[0]{$\times$}
+% \setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun} % ------------------------------------------------- Windows
+\setCJKmainfont[BoldFont=FandolHei-Regular.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf} % -- Linux
+% \setCJKmainfont[BoldFont=Noto Serif CJK SC,ItalicFont=Noto Serif CJK SC]{Noto Serif CJK SC}
+% \setmonofont{Consolas} % ------------------------------------------------------------------------------------ Windows
+\setmonofont{JetBrains Mono}
+\setlist[itemize]{itemsep=0pt,partopsep=0pt,parsep=0pt,topsep=10pt}
+\setlist[enumerate]{itemsep=0pt,partopsep=0pt,parsep=0pt,topsep=10pt}
+\setlist[itemize,1]{leftmargin=35pt}
+\setlist[enumerate,1]{leftmargin=35pt}
+\newcommand{\docTitle}{N⊕IP模拟赛}
+\newcommand{\docAuthor}{\text{Gold \& W1ngD1nGa5ter}}
+\newcommand{\fancyheadLeftText}{\docTitle}
+\newcommand{\fancyheadRightText}{}
+\title{\Huge \textbf{N⊕IP模拟赛}}
+\author{$\docAuthor$}
+\hypersetup{
+	pdftitle={\docTitle},
+	pdfauthor={\docAuthor}
+}
+\date{\heiti \Large{08:00$\sim$11:40}}
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0pt}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage 页\quad 共 \pageref{LastPage} 页}
+% \textwidth=478pt
+% \tabcolsep=6pt
+% total_width=\textwidth-2*columns*\tabcolsep-(columns+1)*0.5pt
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{78.9020375pt}|m{78.9020375pt}|m{88.9020375pt}|m{108.9020375pt}|}
+        \hline 题目名称 & 开端 & 赛博世界 & 深夜 & 预言 \\
+        \hline 题目类型 & 传统型 & 传统型 & 传统型 & 传统型 \\
+        \hline 目录 & \lstinline|begin| & \lstinline|cyber| & \lstinline|latenight| & \lstinline|prophecy| \\
+        \hline 文件名 & \lstinline|begin| & \lstinline|cyber| & \lstinline|latenight| & \lstinline|prophecy| \\
+        \hline 输入文件名 & \lstinline|begin.in| & \lstinline|cyber.in|  & \lstinline|latenight.in|  & \lstinline|prophecy.in|  \\
+        \hline 输出文件名 & \lstinline|begin.out| & \lstinline|cyber.out| & \lstinline|latenight.out| & \lstinline|prophecy.out| \\
+        \hline 时间限制 & 1.145 秒 & 1.419 秒 & 1.98 秒 & 1.0 秒  \\
+        \hline 内存限制 & 512 MB & 512 MB & 512 MB & 512 MB \\
+        \hline 测试包数目 & -1 & -1 & -1 & -1 \\
+        \hline 测试包等分 & 否 & 否 & 否 & 否 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+提交源程序
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{78.9020375pt}|m{78.9020375pt}|m{88.9020375pt}|m{108.9020375pt}|}
+        \hline
+        C++语言 & \lstinline|begin.cpp| & \lstinline|cyber.cpp| & \lstinline|latenight.cpp| & \lstinline|prophecy.cpp| \\
+        \hline
+    \end{tabular}\\
+\end{center}
+
+编译选项
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{392.80814pt}<{\centering}|}
+        \hline
+        C++语言 & \lstinline|-O2 -lm -std=c++14| \\
+        \hline
+    \end{tabular}\\
+\end{center}
+
+\CJKdotbf{注意事项（请仔细阅读）}
+
+\begin{enumerate}
+    \item 文件名（程序名和输入输出文件名）必须使用英文小写。
+    \item 赛时请勿大声嘴巴。
+    \item 若无特殊说明，结果的比较方式为全文比较（过滤行末空格及文末回车）。
+    \item 选手提交的程序源文件必须不大于 100KB。
+    \item 题目不一定按难度降序排序。
+    \item \textbf{本场比赛的题目输入输出量较大，请使用较快的输入输出方式。}
+\end{enumerate}
+
+\newpage
+\renewcommand\headrulewidth{0.5pt}
+\fancyhead[L]{\footnotesize \fancyheadLeftText}
+
+\section{开端（begin）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 开端（begin）}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapter_1_icon.png}
+    \caption{Chapter 1: The Beginning}
+    \label{fig:example}
+\end{figure}
+
+\subsection{问题描述}
+
+给定长度为 $n$ 的非负整数序列 $a$，求有多少组正整数对 $(i,j)$ 使得 $1\le i< j\le n$，并且对于任意的 $a_k$ 和非负整数 $x$，都有 $a_k\oplus x\le a_i\oplus x$ 或者 $a_k\oplus x\ge a_j\oplus x$。
+
+其中 $\oplus$ 表示按位异或运算。
+
+\subsection{输入格式}
+
+从文件\filename{begin.in}中读入数据。
+
+本题有多组测试数据，第一行输入一个正整数 $T$，代表数据组数。
+
+对于每组数据：
+
+\begin{itemize}
+    \item 第一行输入一个正整数 $n$，代表序列长度；
+    \item 第二行输入 $n$ 个非负整数，代表序列 $a$。
+\end{itemize}
+
+\subsection{输出格式}
+
+输出到文件 \filename{begin.out} 中。
+
+对于每组数据，输出一行一个整数，代表答案。
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+4
+5
+1 4 5 2 6
+7
+3 1 4 5 9 2 6
+3
+114 51 4
+6
+1 2 4 8 16 32
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+2
+2
+1
+1
+
+\end{lstlisting}
+
+\subsection{样例 $2\sim 3$}
+
+见选手目录下的 \filename{begin/begin2$\sim$3.in} 与 \filename{begin/begin2$\sim$3.ans}。
+
+这些样例符合子任务 $1$ 的约束。
+
+\subsection{样例 $4$}
+
+见选手目录下的 \filename{begin/begin4.in} 与 \filename{begin/begin4.ans}。
+
+该样例符合子任务 $2$ 的约束。
+
+\subsection{样例 $5$}
+
+见选手目录下的 \filename{begin/begin5.in} 与 \filename{begin/begin5.ans}。
+
+该样例符合子任务 $3$ 的约束。
+
+\subsection{样例 $6$}
+
+见选手目录下的 \filename{begin/begin6.in} 与 \filename{begin/begin6.ans}。
+
+该样例符合子任务 $4$ 的约束。
+
+\subsection{样例 $7$}
+
+见选手目录下的 \filename{begin/begin7.in} 与 \filename{begin/begin7.ans}。
+
+该样例符合子任务 $5$ 的约束。
+
+\subsection{样例 $8$}
+
+见选手目录下的 \filename{begin/begin8.in} 与 \filename{begin/begin8.ans}。
+
+该样例符合子任务 $6$ 的约束。
+
+\subsection{测试点约束}
+
+以下设 $\sum n$ 表示单个测试点内所有 $n$ 的和，$V$ 表示单个测试点内所有 $a_i$ 的最大值。
+
+对于所有数据，保证：
+
+\begin{itemize}
+    \item $1\le T\le 5\times 10^5$；
+    \item $2\le n,\sum n\le 10^6$；
+    \item $\forall 1\le i\le n,0\le a_i<2^{30}$。
+    \item 保证对于单个序列 $a$，$a$ 中的数互不相同。
+\end{itemize}
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+ 
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务编号 & $\sum n\le$  & $V<$ & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $1$ & $100$ & $2^7$ & $6$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $2$ & $500$ & \multirow{2}{*}{$2^9$} & $8$ \\
+        \cline{1-1}\cline{2-2}\cline{4-4}
+        $3$ & $10^4$ &  & $20$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $4$ & $10^6$ & $2^{12}$ & $14$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $5$ & $200$ & \multirow{2}{*}{$2^{30}$} & $20$ \\
+        \cline{1-1}\cline{2-2}\cline{4-4}
+        $6$ & $10^6$ &  & $32$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\section{赛博世界（cyber）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 赛博世界（cyber）}
+
+\subsection{问题描述}
+
+给定长度为 $n$ 的正整数序列 $a$ 和 $l$，保证：
+
+\begin{itemize}
+    \item $\forall 1\le i< n,a_i<a_{i+1}$；
+    \item $a_n<l$。
+\end{itemize}
+
+你需要找出一个正整数序列 $x_{0\sim n}$，使得：
+
+\begin{itemize}
+    \item $x_0=0,x_n=l$；
+    \item $\forall 1\le i\le n,x_{i-1}\le a_i\le x_{i}\land x_{i-1}<x_i$。
+\end{itemize}
+
+在此同时，你需要最小化 $\max_{i=1}^n(x_i-x_{i-1})-\min_{i=1}^n(x_i-x_{i-1})$ 的值，请求出这样的序列 $x$。
+
+\subsection{输入格式}
+
+从文件\filename{cyber.in}中读入数据。
+
+本题有多组测试数据，第一行输入一个正整数 $T$，代表数据组数。
+
+对于每组数据：
+
+\begin{itemize}
+    \item 第一行输入两个正整数 $l,n$；
+    \item 第二行输入 $n$ 个非负整数，代表序列 $a$。
+\end{itemize}
+
+\subsection{输出格式}
+
+输出到文件 \filename{cyber.out} 中。
+
+对于每组询问，输出一行 $n+1$ 个数，代表序列 $x$。
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+5
+6 3
+1 3 5
+10 2
+1 2
+15 10
+1 3 4 5 7 8 9 10 11 13
+100 10
+14 26 29 31 34 42 44 48 49 68
+100 10
+3 42 45 58 69 73 75 78 84 88
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+0 2 4 6 
+0 2 10 
+0 1 3 4 5 7 8 9 11 13 15 
+0 14 26 29 32 35 42 45 48 68 100 
+0 21 42 46 58 69 73 77 81 85 100 
+\end{lstlisting}
+
+\subsection{样例 $2$}
+
+见选手目录下的 \filename{cyber/cyber2.in} 与 \filename{cyber/cyber2.ans}。
+
+该样例符合子任务 $2$ 的约束。
+
+\subsection{样例 $3$}
+
+见选手目录下的 \filename{cyber/cyber3.in} 与 \filename{cyber/cyber3.ans}。
+
+该样例符合子任务 $3$ 的约束。
+
+\subsection{样例 $4$}
+
+见选手目录下的 \filename{cyber/cyber4.in} 与 \filename{cyber/cyber4.ans}。
+
+该样例符合子任务 $4$ 的约束。
+
+\subsection{样例 $5$}
+
+见选手目录下的 \filename{cyber/cyber5.in} 与 \filename{cyber/cyber5.ans}。
+
+该样例符合子任务 $5$ 的约束。
+
+\subsection{样例 $6$}
+
+见选手目录下的 \filename{cyber/cyber6.in} 与 \filename{cyber/cyber6.ans}。
+
+该样例符合子任务 $6$ 的约束。
+
+\subsection{样例 $7$}
+
+见选手目录下的 \filename{cyber/cyber7.in} 与 \filename{cyber/cyber7.ans}。
+
+该样例符合子任务 $7$ 的约束。
+
+\subsection{Special Judge}
+
+在本题中，你可以通过下发的 \filename{cyber/checker.cpp} 来判断程序输出是否正确。
+
+具体的，若输入文件、输出文件、答案文件分别为 \filename{cyber.in}、\filename{cyber.out}、\filename{cyber.ans}，你可以先编译 \filename{checker.cpp} 得到 \filename{checker(.exe)}，随后在命令行中使用以下指令：
+
+\begin{verbatim}
+./checker(.exe) cyber.in cyber.out cyber.ans
+\end{verbatim}
+
+即可判断程序输出是否正确。
+
+\textbf{特别的，由于此题使用了这种特殊的测试方式，所以答案文件与输出文件格式不同。}具体的，答案文件有 $T$ 行，对于每组数据有一行一个数，代表 $\max_{i=1}^n(x_i-x_{i-1})-\min_{i=1}^n(x_i-x_{i-1})$ 的最小值。
+
+\subsection{测试点约束}
+
+以下设 $\sum n$ 表示单个测试点内所有 $n$ 的和，$V$ 表示单个测试点内所有 $l$ 的最大值。
+
+对于所有数据，保证：
+
+\begin{itemize}
+    \item $1\le T\le 10^4$；
+    \item $2\le n,\sum n\le 2\times 10^6$；
+    \item $n< l\le 10^9$
+    \item $\forall 1\le i< n,a_i<a_{i+1}$；
+    \item $a_n<l$。
+\end{itemize}
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务 & $\sum n\le$ & $V\le$ & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $1$ & $10$ & $15$ & $10$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $2$ & $500$ & $500$ & $15$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $3$ & $2000$ & $2000$ & $10$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $4$ & $5000$ & $5000$ & $15$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $5$ & $5\times 10^4$ & \multirow{3}{*}{$10^9$} & $15$ \\
+        \cline{1-1}\cline{2-2}\cline{4-4}
+        $6$ & $2\times10^5$ &  & $15$ \\
+        \cline{1-1}\cline{2-2}\cline{4-4}
+        $7$ & $2\times10^6$ &  & $20$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\section{深夜（latenight）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 深夜（latenight）}
+
+\subsection{题目背景}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapter_3_icon.png}
+    \caption{Chapter 3: Late Night}
+    \label{fig:example}
+\end{figure}
+
+Ralsei 正躺在床上看数学书。
+
+上面写着：
+
+按位异或（bitwise xor）是一个二元运算符，一般来说可以表示为 $A\oplus B=C$
+这是一种简单又神奇的运算
+$A\oplus B$ 意味着将二进制下的 $A$ 与 $B$ 每一位拿出来
+一一对应
+进行不进位的加法
+即 $0\oplus 0=0,0\oplus 1=1,1\oplus 0=1,1\oplus 1=0$
+最终重新组合成为新数 $C$
+比如 $2\oplus 11=(0010)_2\oplus (1011)_2=(1001)_2=9$
+有很多神奇的性质，相信读者可以轻松注意到
+
+突然，他感应到了什么。
+
+Kris 与 Susie 一同进入了一个暗世界。
+
+Ralsei 顾不得洗漱，立即出发与 KS 会面。
+
+但是，他突然发现 KS 所在的暗世界很远，一时半会到不了。
+
+所幸，他想起看过的一本魔法书，写道：
+
+亲爱的魔法师读者啊
+如果你想去某个很远的地方
+可以使用传送魔法哟
+只要有挂念的人在那里
+就可以通过如下的方法传送：
+
+每个人都有一个自己的号码
+这个号码非常特殊，有 $2^n-1$ 位，由 $0~2^n-1$ 的整数组成
+每一位都是不相同的
+号码可以进行如下的变换：
+选择两个 $0~2^n-1$ 的不相同的整数 $i$ 和 $j$
+当满足 $i$ 与 $j$ 的异或和不小于号码对应位置的值的异或和
+即 $a_i\oplus a_j\le i\oplus j$，即可交换
+只要你知道你和那个人的号码 $p$ 和 $q$
+如果 $p$ 能通过不超过 $3.2\times 10^6$ 次上面的变换变成 $q$
+那么你就能直接飞跃东非大裂巴传送至那个人身旁
+
+Ralsei 发现自己知道 Kris 和 Susie 和身旁一万个 $\text{N}_2$ 分子（你先别管是不是人）的 ID。
+
+但是他数学太差了，不知道能传送到哪个 ID 身旁。
+
+请你推测对于每个 ID ，可能或是不可能传送。
+
+如果可能，输出一个变换的方案。
+
+如果不可能，输出 $-1$。
+
+\subsection{问题描述}
+
+给定 $0\sim 2^n-1$ 的排列 $p,q$，下标从 $0$ 开始。
+
+定义一次操作为：
+
+- 选择不同的两个下标 $i,j$，使得 $p_i\oplus p_j\le i\oplus j$；
+- 交换 $p_i,p_j$。
+
+你要在不超过 $3.2\times 10^6$ 次操作内将 $p$ 变成 $q$，输出一组解。
+
+\subsection{输入格式}
+
+从文件\filename{latenight.in}中读入数据。
+
+**本题有多组测试数据**，第一行输入一个正整数 $T$，代表数据组数。
+
+对于每组数据：
+
+\begin{itemize}
+    \item 第一行输入一个正整数 $n$。
+    \item 第二行输入 $2^n$ 个非负整数，代表排列 $p$；
+    \item 第三行输入 $2^n$ 个非负整数，代表排列 $q$。
+\end{itemize}
+
+\subsection{输出格式}
+
+输出到文件 \filename{latenight.out} 中。
+
+对于每组数据：
+
+\begin{itemize}
+  \item 第一行输出一个非负整数 $m$，代表操作次数；
+  \item 接下来 $m$ 行，每行输出两个不同的非负整数 $i,j$，代表这次操作的两个下标。
+\end{itemize}
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+
+3
+1
+0 1
+1 0
+2
+0 2 3 1
+0 1 2 3
+3
+1 4 5 2 6 0 7 3
+0 6 5 4 2 3 7 1
+
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+1
+1 0
+2
+2 1
+1 3
+4
+0 5
+1 4
+3 4
+5 7
+
+\end{lstlisting}
+
+\subsection{Special Judge}
+
+在本题中，你可以通过下发的 \filename{latenight/checker.cpp} 来判断程序输出是否正确。
+
+具体的，若输入文件、输出文件、答案文件分别为 \filename{latenight.in}、\filename{latenight.out}、\filename{latenight.ans}，你可以先编译 \filename{checker.cpp} 得到 \filename{checker(.exe)}，随后在命令行中使用以下指令：
+
+Linux:
+\begin{verbatim}
+./checker latenight.in latenight.out latenight.ans
+\end{verbatim}
+
+Windows 同理，没测过，自己试，不保证可行性，不行的话你自己阅读理解吧LOL。
+
+即可判断程序输出是否正确。
+
+\textbf{特别的，由于此题使用了这种特殊的测试方式，所以答案文件为空文件。}
+
+\subsection{测试点约束}
+
+对于所有数据，保证：
+
+\begin{itemize}
+    \item $1\le T\le 3$；
+    \item $1\le n\le 19$；
+    \item $p$ 是 $0~2^n-1$ 的排列。
+\end{itemize}
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+
+\begin{center}
+    \begin{tabular}{c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务 & $n\le$  & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $1$ & $3$ & $16$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $2$ & $8$ & $20$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $3$ & $15$ & $30$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $4$ & $19$ & $30$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\section{预言（prophecy）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 预言（prophecy）}
+
+\subsection{题目背景}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Chapter_4_icon.png}
+    \caption{Chapter 4: Prophecy}
+    \label{fig:example}
+\end{figure}
+
+你的旅途已过半程。
+
+Kris 正在教堂的图书馆。
+
+Kris 知道图书馆有一个暗门，通向【数据删除】。
+
+打开暗门需要拉下第 [CENSORED] 本书，但是 Kris 并不知道到底是哪本书。
+
+所幸的是，Kris 知道 [CENSORED] 的意义。
+
+Kris 从图书管理系统了解到，图书馆里有 $n$ 本书，第 $i$ 书的页数是 $a_i$。
+
+只要算出 $\left(\prod_{i=1}^n\prod_{j=i+1}^n\left(a_i\oplus a_j\right)\right) \pmod 2^{64}$，Kris 就可以进入【数据删除】。
+
+但是图书馆的书 成千上十万，Kris 不可能手算。
+
+【祂】注意到了你。
+
+【祂】找到了你。
+
+【接下来的实验……】
+【看起来……】
+【非常】
+【非常】
+【有趣。】
+
+【……】
+【你觉得呢】
+
+\subsection{问题描述}
+
+给定长度为 $n$ 的非负整数序列 $a_1, \ldots, a_n$，求：
+
+$$\prod_{i=1}^n\prod_{j=i+1}^n(a_i\oplus a_j)$$
+
+其中 $\oplus$ 表示按位异或运算。
+
+答案对 $2^{64}$ 取模。
+
+\subsection{输入格式}
+
+从文件\filename{prophecy.in}中读入数据。
+
+本题输入包含多组数据。第一行一个整数 $T$，表示数据组数。对于每组数据：
+
+\begin{itemize}
+    \item 第一行，一个整数 $n$。
+    \item 第二行，$n$ 个整数 $a_1, \ldots, a_n$。
+\end{itemize}
+
+\subsection{输出格式}
+
+输出到文件 \filename{prophecy.out} 中。
+
+对于每组数据，输出一行一个数，表示答案对 $2^{64}$ 取模后的结果。
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+4
+2
+1 1
+3
+1 2 3
+5
+1 4 5 2 6
+13
+1 2 3 4 5 6 7 8 9 10 11 12 13
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+0
+6
+423360
+8286623314361712640
+\end{lstlisting}
+
+\subsection{测试点约束}
+
+以下设 $\sum n$ 表示单个测试点内所有 $n$ 的和，$V$ 表示单个测试点内所有 $a_i$ 的取值范围。
+
+对于所有数据，保证 $1\le T\le 10^5$，$2\le n,\sum n\le 10^6$，$0\le a_i < 2^{64}$。
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务编号 & $\sum n\le$  & $V<$ & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $1$ & $5000$ & $2^{64}$ & $12$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $2$ & $10^6$ & $2^5$ & $32$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $3$ & $10^6$ & $2^{64}$ & $56$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\end{document}
