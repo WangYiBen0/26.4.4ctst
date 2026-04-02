@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1775116741.64148 "Problem.xdv" "Problem.pdf" "Problem" 1775116742.08119 0
-  "Problem.xdv" 1775116741.42872 120804 f59877cfa193aec56d42bf871d532949 "xelatex"
+["xdvipdfmx"] 1775128456.11845 "Problem.xdv" "Problem.pdf" "Problem" 1775128456.64146 0
+  "Problem.xdv" 1775128455.91967 120804 dc89bef7dcbee4a78a6371fd1d2f6fb1 "xelatex"
   (generated)
   "Problem.pdf"
   (rewritten before read)
-["xelatex"] 1775116739.18731 "Problem.tex" "Problem.xdv" "Problem" 1775116742.07472 0
+["xelatex"] 1775128448.40726 "Problem.tex" "Problem.xdv" "Problem" 1775128456.63749 0
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/fonts/map/fontname/texfonts.map" 1 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/fonts/tfm/adobe/zapfding/pzdr.tfm" 1 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -219,9 +219,9 @@
   "Deltarune_Wiki_logo.png" 1774961963.59369 1541 c0cda24f8b4c02f8146183a5a9f3dccd ""
   "Deltarune_logo.pdf" 1774961963.59885 1401 cbcb9a8ccdaa68ddc79db3aad2d3104c ""
   "Deltarune_logo.pdf_tex" 1774961963.59369 2075 c0a46305a711e28662255a9f4745394c ""
-  "Problem.aux" 1775116741.42572 5097 7167d33d91f3d0420c7e873b136047bc "xelatex"
-  "Problem.out" 1775116741.42772 3411 bb22e27d0d6ccbbf27d85a221f2cf7e6 "xelatex"
-  "Problem.tex" 1775116488.67371 23076 239d1e500e2e4dddee08addfa3583f6b ""
+  "Problem.aux" 1775128455.91867 5097 7167d33d91f3d0420c7e873b136047bc "xelatex"
+  "Problem.out" 1775128455.91967 3411 bb22e27d0d6ccbbf27d85a221f2cf7e6 "xelatex"
+  "Problem.tex" 1775128444.36851 23076 dfa3d40c10c9c7f0f2cf34255193474a ""
   (generated)
   "Problem.aux"
   "Problem.log"
