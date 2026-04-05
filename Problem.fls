@@ -1,4 +1,4 @@
-PWD /home/w1ngd1nga5ter/Repo/26.4.4ctst
+PWD /home/w1ngd1nga5ter/26.4.4ctst
 INPUT /nix/store/d4pm16gh9k3zi16is2wn6pchkhn15f6n-texlive-2025-r77567-env/share/texmf-var/web2c/texmf.cnf
 INPUT /nix/store/d4pm16gh9k3zi16is2wn6pchkhn15f6n-texlive-2025-r77567-env/share/texmf-var/web2c/xetex/xelatex.fmt
 INPUT Problem.tex
