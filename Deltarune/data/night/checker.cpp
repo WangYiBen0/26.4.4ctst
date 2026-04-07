@@ -1,4 +1,5 @@
-#include "testlib.h"
+// #include "testlib.h"
+#include "testlib_for_lemons.h"
 #include <vector>
 
 constexpr int N = 19, LIM = 3.2e6;
@@ -31,7 +32,8 @@ void solve() {
 }
 
 int main(int argc, char *argv[]) {
-  registerTestlibCmd(argc, argv);
+  // registerTestlibCmd(argc, argv);
+  registerLemonChecker(argc, argv);
   int T = inf.readInt();
   for (int i = 1; i <= T; ++i) {
     setTestCase(i);
