@@ -1,0 +1,51 @@
+// #include "testlib.h"
+#include "testlib_for_lemons.h"
+#include <bits/stdc++.h>
+#define cint const int
+#define uint unsigned int
+#define cuint const unsigned int
+#define ll long long
+#define cll const long long
+#define ull unsigned long long
+#define cull const unsigned long long
+using namespace std;
+cint N = 19, LIM = 3.2e6;
+int n, p[1 << N], q[1 << N];
+int m;
+void solve() {
+  n = inf.readInt();
+  for (int i = 0; i < (1 << n); ++i)
+    p[i] = inf.readInt();
+  for (int i = 0; i < (1 << n); ++i)
+    q[i] = inf.readInt();
+  m = ouf.readInt(0, LIM);
+  ouf.readEoln();
+  for (int i = 1; i <= m; ++i) {
+    cint x = ouf.readInt(0, (1 << n) - 1);
+    ouf.readSpace();
+    cint y = ouf.readInt(0, (1 << n) - 1);
+    ouf.readEoln();
+    if (x == y)
+      quitf(_wa, "The i is equal to j!");
+    if ((p[x] ^ p[y]) > (x ^ y))
+      quitf(_wa, "p_i \\oplus p_j is greater than i \\oplus j!");
+    swap(p[x], p[y]);
+  }
+  for (int i = 0; i < (1 << n); ++i) {
+    if (p[i] != q[i])
+      quitf(_wa, "p[%d]=%d but q[%d]=%d", i, p[i], i, q[i]);
+  }
+}
+int main(int argc, char *argv[]) {
+  // freopen(".in","r",stdin);
+  // freopen(".out","w",stdout);
+  // registerTestlibCmd(argc, argv);
+  registerLemonChecker(argc, argv);
+  int T = inf.readInt();
+  for (int i = 1; i <= T; ++i) {
+    setTestCase(i);
+    solve();
+  }
+  quitf(_ok, "Good job!");
+  return 0;
+}

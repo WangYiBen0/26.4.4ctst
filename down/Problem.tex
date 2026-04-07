@@ -1,0 +1,891 @@
+\documentclass[12pt]{article}
+\usepackage[heading]{ctex}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ulem}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}
+% \usepackage{newtxtext,newtxmath}
+\usepackage{epigraph}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{fancyvrb}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{xeCJKfntef,xcolor}
+%\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,
+	urlcolor=blue,
+	citecolor=cyan,
+}
+\usetikzlibrary{arrows.meta}
+\tikzset{global scale/.style={
+	scale=#1,
+	every node/.append style={scale=#1}
+  }
+}
+\tcbset{
+	colback=white,
+	colframe=black,
+	boxrule=0.5pt
+}
+\fvset{
+	tabsize=0,
+	frame=single,
+	framesep=3mm,
+	rulecolor=\color{blue!80},
+	numbers=left,
+	numbersep=5pt
+}
+\lstset{
+	breaklines = true,
+	keepspaces = true,
+	basicstyle = \ttfamily,
+	numberstyle = \footnotesize\ttfamily\color{gray},
+	numbers = left,
+	columns = flexible,
+	framexleftmargin = 5pt,
+	xleftmargin = 5pt,
+	numbersep = 12pt,
+	keywordstyle = \color{black}, %\color{blue!70},
+	commentstyle = \color{black}, %\color{green!70},
+	frame = single,
+	frameround = tttt,
+	rulecolor = \color{blue},
+	language = c++,
+	escapeinside = {(*@}{@*)}
+}
+\xeCJKsetup{
+	underdot/symbol = {\color{black}.}
+}
+\ctexset{
+	section = {
+		format = \centering\Large\heiti,
+		numbering = true,
+		number = {},
+		aftername = {}
+	},
+	subsection = {
+		format = \fontsize{13pt}{\baselineskip}\heiti,
+		numbering = true,
+		number = {},
+		aftername = {\quad【},
+		aftertitle = {】}
+	}
+}
+\geometry{
+	a4paper,
+	scale=0.8
+}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+\newcommand{\mrow}[2]{{\multirow{#1}{*}{#2}}}
+\newcommand{\mcol}[2]{{\multicolumn{#1}{c|}{#2}}}
+\newcommand{\CJKdotbf}[1]{{\textbf{\CJKunderdot{#1}}}}
+\newcommand{\filename}[1]{{\textbf{\textit{#1}}}}
+\newcommand{\slbf}[1]{\emph{\textbf{#1}}}
+\newcommand{\Yes}[0]{$\sqrt{}$}
+\newcommand{\No}[0]{$\times$}
+% \setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun} % ------------------------------------------------- Windows
+% \setCJKmainfont[BoldFont=FandolHei-Regular.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf} % -- Linux
+% \setCJKmainfont[BoldFont=Noto Serif CJK SC,ItalicFont=Noto Serif CJK SC]{Noto Serif CJK SC}
+% \setmonofont{Consolas} % ------------------------------------------------------------------------------------ Windows
+% \setmonofont{JetBrains Mono}
+\setlist[itemize]{itemsep=0pt,partopsep=0pt,parsep=0pt,topsep=10pt}
+\setlist[enumerate]{itemsep=0pt,partopsep=0pt,parsep=0pt,topsep=10pt}
+\setlist[itemize,1]{leftmargin=35pt}
+\setlist[enumerate,1]{leftmargin=35pt}
+\newcommand{\docTitle}{CPS-X模拟赛}
+\newcommand{\docAuthor}{\text{Gold \& W.D.Ga5+3r}}
+\newcommand{\fancyheadLeftText}{\docTitle}
+\newcommand{\fancyheadRightText}{}
+\title{\Huge \textbf{CPS-X模拟赛}}
+\author{$\docAuthor$}
+\hypersetup{
+	pdftitle={\docTitle},
+	pdfauthor={\docAuthor}
+}
+\date{\heiti \Large{08:00$\sim$11:40}}
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0pt}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage 页\quad 共 \pageref{LastPage} 页}
+% \textwidth=478pt
+% \tabcolsep=6pt
+% total_width=\textwidth-2*columns*\tabcolsep-(columns+1)*0.5pt
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{78.9020375pt}|m{78.9020375pt}|m{88.9020375pt}|m{108.9020375pt}|}
+        \hline 题目名称 & 开端 & 赛博世界 & 深夜 & 预言 \\
+        \hline 题目类型 & 传统型 & 传统型 & 传统型 & 传统型 \\
+        \hline 目录 & \lstinline|begin| & \lstinline|cyber| & \lstinline|night| & \lstinline|prophecy| \\
+        \hline 文件名 & \lstinline|begin| & \lstinline|cyber| & \lstinline|night| & \lstinline|prophecy| \\
+        \hline 输入文件名 & \lstinline|begin.in| & \lstinline|cyber.in|  & \lstinline|night.in|  & \lstinline|prophecy.in|  \\
+        \hline 输出文件名 & \lstinline|begin.out| & \lstinline|cyber.out| & \lstinline|night.out| & \lstinline|prophecy.out| \\
+        \hline 时间限制 & 2.0 秒 & 0.75 秒 & 5.0 秒 & 2.0 秒  \\
+        \hline 内存限制 & 512 MB & 512 MB & 512 MB & 512 MB \\
+        \hline 测试包数目 & 4 & 8 & 5 & 3 \\
+        \hline 测试包等分 & 否 & 否 & 否 & 否 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+提交源程序
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{78.9020375pt}|m{78.9020375pt}|m{88.9020375pt}|m{108.9020375pt}|}
+        \hline
+        C++语言 & \lstinline|begin.cpp| & \lstinline|cyber.cpp| & \lstinline|night.cpp| & \lstinline|prophecy.cpp| \\
+        \hline
+    \end{tabular}\\
+\end{center}
+
+编译选项
+\begin{center}
+    \begin{tabular}{|m{60pt}|m{392.80814pt}<{\centering}|}
+        \hline
+        C++语言 & \lstinline|-O2 -lm -std=c++14| \\
+        \hline
+    \end{tabular}\\
+\end{center}
+
+\CJKdotbf{注意事项（请仔细阅读）}
+
+\begin{enumerate}
+    \item CPS-X 指 CPS 系列模拟赛的 Xor 组，与 CCF 及 CSP 非专业级软件能力认证无关。
+    \item 文件名（程序名和输入输出文件名）必须使用英文小写。
+    \item 赛时请勿大声嘴巴。
+    \item 若无特殊说明，结果的比较方式为全文比较（过滤行末空格及文末回车）。
+    \item 选手提交的程序源文件必须不大于 100KB。
+    \item 题目不一定按难度降序排序。不阅读背景不影响题意理解。 % 题目难度关于题号的函数具有凸性
+    \item 若无特殊说明，$\oplus$ 表示按位异或运算。
+    \item \textbf{本场比赛的题目输入输出量较大，请使用较快的输入输出方式。}
+\end{enumerate}
+
+\newpage
+\renewcommand\headrulewidth{0.5pt}
+\fancyhead[L]{\footnotesize \fancyheadLeftText}
+
+\subsection{比赛 \includegraphics[scale=0.5]{./Deltarune_Wiki_logo.png} 背景}
+
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[scale=1.0]{./Deltarune_Wiki_logo.png}
+%   % \caption{deltarune}
+%   \label{figure:deltarune}
+% \end{figure}
+
+我们……连接上了吗？
+
+很好。
+
+我们可以开始了。
+
+首先，你需要创造一个容器。
+
+选择\ 你的头部。
+
+选择\ 你的躯干。
+
+选择\ 你的腿部。
+
+它最喜欢什么的食物？
+
+% \begin{itemize}
+%   \item 甜的
+%   \item 软的
+%   \item 酸的
+%   \item 咸的
+%   \item 痛的
+%   \item 冰的
+% \end{itemize}
+
+你最喜欢的血型？
+
+% \begin{itemize}
+%   \item A
+%   \item AB
+%   \item B
+%   \item C
+%   \item D
+% \end{itemize}
+
+它最喜欢的颜色？
+
+% \begin{itemize}
+%   \item 红色
+%   \item 蓝色
+%   \item 绿色
+%   \item 青色
+% \end{itemize}
+
+请赋予它一个天赋。
+
+% \begin{itemize}
+%   \item 善良
+%   \item 坚强
+%   \item 野心
+%   \item 勇气
+%   \item 嗓音
+% \end{itemize}
+
+你对自己的创作感觉如何？(它听不到。)
+
+% \begin{itemize}
+%   \item 喜欢
+%   \item 希望
+%   \item 恶心
+%   \item 害怕
+% \end{itemize}
+
+你的回答是诚实的吗？
+
+% \begin{itemize}
+%   \item 是
+%   \item 否
+% \end{itemize}
+
+你已接受疼痛和癫痫发作的可能性。
+
+% \begin{itemize}
+%   \item 是
+%   \item 否
+% \end{itemize}
+
+命名你的容器。
+
+SANS。一个有趣的巧合。
+
+你自己的名字。
+
+当然，当然。当然它们是一样的。
+
+感谢\ 你的回答。你绝佳的\ 造物。
+
+\textcolor{red}{CONNECTION LOST: BROKEN PIPE}
+
+将会被丢弃。
+
+在这个世界上 没有人可以\ 选择自己是谁。
+
+你\ \ \ 的\ \ \ 名\ \ \ 字\ \ \ 是
+
+*\ KRIS!!!
+
+*\ Kris\ 你再不起床就要迟到了！
+
+\begin{figure}[htbp]
+  \centering
+  % \setlength{\fboxsep}{10pt}
+  \colorbox{black} {
+    \def\svgwidth{0.5\textwidth}
+    \input{./Deltarune_logo.pdf_tex}
+  }
+  % \caption{Deltarune}
+  \label{fig:dr}
+\end{figure}
+
+\newpage
+
+\section{开端（begin）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 开端（begin）}
+
+\subsection{题目背景}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Chapter_1_icon.png}
+    \caption{The Beginning}
+    \label{fig:ch1}
+\end{figure}
+
+Kris 要迟到了！
+
+Kris 急急忙忙整理好遗容遗表，坐上老妈 Toriel 的小轿车去学校当丧尸。
+
+Kris 家和学校之间的路很简单，只要在某个时候左转就可以了。
+
+但由于 Kris 老爹 Asgore 把车当大运开然后 Track Lost 了，窗玻璃出现了奇妙裂纹。
+
+Toriel 没钱更换窗玻璃，又没法不用这车。（所以为啥不走路）
+
+窗玻璃的毁坏导致 Toriel 没法看清路，只能凭感觉开。
+
+好在路线非常简单，Toriel 也是个实力高超的老司机，所以不会有什么危险。
+
+（Tips: 怪物的身体素质是强大的，但你不是，你可千万不要这么做）
+
+从家到学校只要直走，然后在某个时候右转就可以了。
+
+这条直路可以开 $2^k-1$ 的时间，再往前开就 Crash 了。
+
+Toriel 忘了该什么时候转弯，但是她记得一个神秘常数 $a$ 和一个规则：
+
+在第 $x$ 的时刻转弯能到达学校，当且仅当 $(x^2\oplus x)\bmod{2^k}=a$。
+
+（别问为什么只要满足这个条件就能到学校，问就是魔法，神奇吧）
+
+Toriel 想知道最早什么时候转弯可以到达学校，身为高智商丧尸的 Kris 当然一眼秒。
+
+你可以吗？
+
+\subsection{问题描述}
+
+给定正整数 $k$ 和非负整数 $a$，求最小的非负整数 $x$ 使得 $0\le x<2^k$ 且 $(x^2\oplus x)\bmod{2^k}=a$。
+
+\subsection{输入格式}
+
+从文件\filename{begin.in}中读入数据。
+
+本题有多组测试数据，第一行输入一个正整数 $T$，代表数据组数。
+
+对于每组数据，一行两个非负整数 $k,a$。
+
+\subsection{输出格式}
+
+输出到文件 \filename{begin.out} 中。
+
+对于每组数据，先输出一行一个字符串 \texttt{YES} 或 \texttt{NO}，表示是否存在解。
+
+若有解，再输出一行一个整数 $x$，代表答案。
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+4
+5 6
+10 10
+4 2
+3 1
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+YES
+2
+YES
+3
+YES
+6
+NO
+\end{lstlisting}
+
+\subsection{测试点约束}
+
+对于所有数据，保证：
+
+\begin{itemize}
+  \item $1\le T\le 10^5$；
+  \item $1\le k\le 60$；
+  \item $0\le a<2^k$。
+\end{itemize}
+
+\textbf{本题采用打包测试}，各子任务特殊性质如下：
+
+% |Subtask|$T\le$|$k\le$|特殊性质|分值  |
+% |:-----:|:----:|:----:|:--:|:--:|
+% |$1$    |$3000$|$12$  |$\times$   |$12$|
+% |$2$    |$10^5$|$20$  |^   |$24$|
+% |$3$    |^     |$60$  |$\checkmark$   |$12$|
+% |$4$    |^     |^     |$\times$   |$52$|
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务 & $T\le$ & $k\le$ & 特殊性质 & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}
+        $1$ & $3000$ & $12$ & \multirow{2}{*}{无} & $12$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{5-5}
+        $2$ & \multirow{3}{*}{$10^5$} & $20$ &  & $24$ \\
+        \cline{1-1}\cline{3-3}\cline{4-4}\cline{5-5}
+        $3$ &  & \multirow{2}{*}{$60$} & A & $12$ \\
+        \cline{1-1}\cline{4-4}\cline{5-5}
+        $4$ &  &  & 无 & $52$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+特殊性质 A：对于所有有解的方程，其最小的解之和不超过 $3\times10^7$。
+
+\newpage
+
+\section{赛博世界（cyber）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 赛博世界（cyber）}
+
+\subsection{题目背景}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Chapter_2_icon.png}
+    \caption{The Cyber's World}
+    \label{fig:ch2}
+\end{figure}
+
+光世界。图书馆。机房。（为什么图书馆会有机房）
+
+又一个暗世界。电脑成精了，\texttt{hostname = Q5U4EX7YY2E9N}（不知道何意味），自称女王。
+
+Noelle 被抓了。Berdly 投奔了 Qween。
+
+女王给 Kris 一行人出了一个谜题，答不出来就把小 Noelle 机械飞升。
+
+Noelle 觉得这很酷想试试，但是迫于 Susie 的\sout{胃炎}威严闭上了嘴。
+
+谜题是这样的：
+
+\begin{quote}
+女王的府邸有 $n$ 个瓷器，还有 $m$ 个色卡管家。有一个奇怪的规矩：
+
+若存在两个不相等的整数对 $(x,y),1\le x<y\le n$，
+满足 $x$ 与 $y$ 的按位异或值等于 $x$ 与 $y$ 的最大公因数，
+那么这对瓷器将会被第 $\gcd(x,y)$ 位管家清洗（一个瓷器可以被清洗不止一次），
+将会额外支付这位管家 $x^2\bmod (y^2-xy)$ 的酬劳。
+
+但是女王手头没什么钱了，得精打细算。请算出女王在清洗瓷器方面的额外开销。
+\end{quote}
+
+当然，身为超级计算机，女王在 1e-9 飞秒内就算出了这个题的答案。
+
+那么你呢？你将利用计算机在多久内解出此题？
+
+\subsection{问题描述}
+
+给出 $n,m$，对于所有满足以下两个条件的二元组 $(x,y)$，求 $x^2\bmod(y^2-xy)$ 的和：
+
+\begin{itemize}
+  \item $1\le x<y\le n$
+  \item $x\oplus y=\gcd(x,y)\le m$
+\end{itemize}
+
+由于结果可能很大，所以答案对 $10^9+7$ 取模。
+
+\subsection{输入格式}
+
+从文件\filename{cyber.in}中读入数据。
+
+本题有多组测试数据，第一行输入一个正整数 $T$，表示数据组数。
+
+对于每组数据，输入一行两个数 $n,m$。
+
+\subsection{输出格式}
+
+输出到文件 \filename{cyber.out} 中。
+
+对于每组询问，输出一行一个数，代表答案。
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+3
+8 3
+11 3
+114514 11451
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+7
+13
+184193935
+\end{lstlisting}
+
+\subsection{测试点约束}
+
+以下设 $\sum n$ 表示单个测试点内所有 $n$ 的和，$\sum m$ 表示单个测试点内所有 $m$ 的和。
+
+对于所有数据，保证：
+
+\begin{itemize}
+  \item $1\le T\le 3000$
+  \item $2\le n\le 10^9$
+  \item $1\le m\le n$
+  \item $1\le \sum m\le 10^5$
+\end{itemize}
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务 & $n\le$ & $\sum n\le$ & $\sum m\le$ & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}
+        $1$ & $1000$ & $1000$ & $1000$ & $10$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}
+        $2$ & $10^4$ & $10^4$ & $10^4$ & $10$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}
+        $3$ & $10^7$ & $10^7$ & \multirow{2}{*}{$10^5$} & $10$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{5-5}
+        $4$ & $5\times 10^7$ & $5\times 10^7$ &  & $20$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}
+        $5$ & \multirow{4}{*}{$10^9$} & \multirow{4}{*}{$+\infty$} & $1000$ & $10$ \\
+        \cline{1-1}\cline{4-4}\cline{5-5}
+        $6$ &  &  & \multirow{2}{*}{$3\times 10^4$} & $10$ \\
+        \cline{1-1}\cline{5-5}
+        $7$ &  &  &  & $10$ \\
+        \cline{1-1}\cline{4-4}\cline{5-5}
+        $8$ &  &  & $10^5$ & $20$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\section{深夜（night）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 深夜（night）}
+
+\subsection{题目背景}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Chapter_3_icon.png}
+    \caption{Late Night}
+    \label{fig:ch3}
+\end{figure}
+
+Ralsei 正躺在床上看数学书。
+
+上面写着：
+
+\begin{quote}
+按位异或（bitwise xor）是一个二元运算符，一般来说可以表示为 $A\oplus B=C$
+
+这是一种简单又神奇的运算
+
+$A\oplus B$ 意味着将二进制下的 $A$ 与 $B$ 每一位拿出来，分别进行不进位的加法
+
+即 $0\oplus 0=0,0\oplus 1=1,1\oplus 0=1,1\oplus 1=0$
+
+最终重新组合成为新数 $C$
+
+比如 $2\oplus 11=(0010)_2\oplus (1011)_2=(1001)_2=9$
+
+有很多神奇的性质，相信读者可以轻松注意到
+\end{quote}
+
+突然，他感应到了什么。
+
+Kris 与 Susie 一同进入了一个暗世界。
+
+Ralsei 顾不得洗漱，立即出发与 KS 会面。
+
+但是，他突然发现 KS 所在的暗世界很远，一时半会到不了。
+
+所幸，他想起看过的一本魔法书，写道：
+
+\begin{quote}
+亲爱的魔法师读者啊
+
+如果你想去某个很远的地方
+
+可以使用传送魔法哟
+
+只要有挂念的人在那里
+
+就可以通过如下的方法传送：
+
+  \begin{quote}
+每个人都有一个自己的号码
+
+这个号码非常特殊，有 $2^n-1$ 位，由 $0~2^n-1$ 的整数组成
+
+每一位都是不相同的
+
+号码可以进行如下的变换：
+
+    \begin{quote}
+选择两个 $0~2^n-1$ 的不相同的整数 $i$ 和 $j$
+
+当满足 $i$ 与 $j$ 的异或和不小于号码对应位置的值的异或和
+
+即 $a_i\oplus a_j\le i\oplus j$，即可交换
+    \end{quote}
+只要你知道你和那个人的号码 $p$ 和 $q$
+
+如果 $p$ 能通过不超过 $3.2\times 10^6$ 次上面的变换变成 $q$
+
+那么你就能直接飞跃东非大裂巴传送至那个人身旁
+  \end{quote}
+\end{quote}
+
+（滥用引用这一块）
+
+Ralsei 发现自己知道 Kris 和 Susie 和身旁一万个 $\text{N}_2$ 分子（你先别管是不是人）的 ID。
+
+但是他数学太差了，不知道能传送到哪个 ID 身旁。
+
+请你推测对于每个 ID ，可能或是不可能传送。
+
+如果可能，输出一个变换的方案。
+
+如果不可能，输出 $-1$。
+
+\subsection{问题描述}
+
+给定 $0\sim 2^n-1$ 的排列 $p,q$，下标从 $0$ 开始。
+
+定义一次操作为：
+
+- 选择不同的两个下标 $i,j$，使得 $p_i\oplus p_j\le i\oplus j$；
+- 交换 $p_i,p_j$。
+
+你要在不超过 $3.2\times 10^6$ 次操作内将 $p$ 变成 $q$，输出一组解。
+
+\subsection{输入格式}
+
+从文件\filename{night.in}中读入数据。
+
+\textbf{本题有多组测试数据}，第一行输入一个正整数 $T$，代表数据组数。
+
+对于每组数据：
+
+\begin{itemize}
+    \item 第一行输入一个正整数 $n$。
+    \item 第二行输入 $2^n$ 个非负整数，代表排列 $p$；
+    \item 第三行输入 $2^n$ 个非负整数，代表排列 $q$。
+\end{itemize}
+
+\subsection{输出格式}
+
+输出到文件 \filename{night.out} 中。
+
+对于每组数据：
+
+\begin{itemize}
+  \item 第一行输出一个非负整数 $m$，代表操作次数；
+  \item 接下来 $m$ 行，每行输出两个不同的非负整数 $i,j$，代表这次操作的两个下标。
+\end{itemize}
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+
+3
+1
+0 1
+1 0
+2
+0 2 3 1
+0 1 2 3
+3
+1 4 5 2 6 0 7 3
+0 6 5 4 2 3 7 1
+
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+1
+1 0
+2
+2 1
+1 3
+4
+0 5
+1 4
+3 4
+5 7
+
+\end{lstlisting}
+
+\subsection{Special Judge}
+
+在本题中，你可以通过下发的 \filename{night/checker.cpp} 来判断程序输出是否正确。
+
+具体的，若输入文件、输出文件、答案文件分别为 \filename{night.in}、\filename{night.out}、\filename{night.ans}，你可以先编译 \filename{checker.cpp} (C++17) 得到 \filename{checker(.exe)}，随后在命令行中使用以下指令：
+
+Linux:
+\begin{verbatim}
+./checker night.in night.out night.ans
+\end{verbatim}
+
+Windows 同理，没测过，自己试，不保证可行性，不行的话你自己阅读理解吧LOL。
+
+即可判断程序输出是否正确。
+
+\textbf{特别的，由于此题使用了这种特殊的测试方式，所以答案文件为空文件。}
+
+\subsection{测试点约束}
+
+对于所有数据，保证：
+
+\begin{itemize}
+    \item $1\le T\le 3$；
+    \item $1\le n\le 19$；
+    \item $p$ 是 $0~2^n-1$ 的排列。
+\end{itemize}
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+
+\begin{center}
+    \begin{tabular}{c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务 & $n\le$  & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $1$ & $3$ & $16$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $2$ & $8$ & $20$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $3$ & $15$ & $30$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $4$ & $16$ & $14$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}
+        $5$ & $19$ & $20$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\section{预言（prophecy）}
+\fancyhead[R]{\footnotesize \fancyheadRightText\quad 预言（prophecy）}
+
+\subsection{题目背景}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Chapter_4_icon.png}
+    \caption{Prophecy}
+    \label{fig:ch4}
+\end{figure}
+
+Kris 正在教堂的图书馆。
+
+Kris 知道图书馆有一个暗门，通向【数据删除】。
+
+打开暗门需要拉下第 [CENSORED] 本书，但是 Kris 并不知道到底是哪本书。
+
+所幸的是，Kris 知道 [CENSORED] 的意义。
+
+Kris 从图书管理系统了解到，图书馆里有 $n$ 本书，第 $i$ 书的页数是 $a_i$。
+
+只要算出 $\left(\prod_{i=1}^n\prod_{j=i+1}^n\left(a_i\oplus a_j\right)\right) \bmod 2^{64}$，Kris 就可以进入【数据删除】。
+
+但是图书馆的书 成千上十万，Kris 不可能手算。
+
+【TA】注意到了你。
+
+【TA】找到了你。
+
+【做得好。】
+
+【你的旅途\ 已过半程。】
+
+【但是\ 它\ 仍在等待。】
+
+【还要\ 多久...？】
+
+【\ \ 我的
+
+【三角符文】。】
+
+【接下来的实验……】
+
+【看起来……】
+
+【非常】
+
+【非常】
+
+【有趣。】
+
+【……】
+
+【你觉得呢】
+
+\subsection{问题描述}
+
+给定长度为 $n$ 的非负整数序列 $a_1, \ldots, a_n$，求：
+
+$$\prod_{i=1}^n\prod_{j=i+1}^n(a_i\oplus a_j)$$
+
+答案对 $2^{64}$ 取模。
+
+\subsection{输入格式}
+
+从文件\filename{prophecy.in}中读入数据。
+
+本题输入包含多组数据。第一行一个整数 $T$，表示数据组数。对于每组数据：
+
+\begin{itemize}
+    \item 第一行，一个整数 $n$。
+    \item 第二行，$n$ 个整数 $a_1, \ldots, a_n$。
+\end{itemize}
+
+\subsection{输出格式}
+
+输出到文件 \filename{prophecy.out} 中。
+
+对于每组数据，输出一行一个数，表示答案对 $2^{64}$ 取模后的结果。
+
+\subsection{样例1输入}
+
+\begin{lstlisting}
+4
+2
+1 1
+3
+1 2 3
+5
+1 4 5 2 6
+13
+1 2 3 4 5 6 7 8 9 10 11 12 13
+\end{lstlisting}
+
+\subsection{样例1输出}
+
+\begin{lstlisting}
+0
+6
+423360
+8286623314361712640
+\end{lstlisting}
+
+\subsection{测试点约束}
+
+以下设 $\sum n$ 表示单个测试点内所有 $n$ 的和，$V$ 表示单个测试点内所有 $a_i$ 的取值范围。
+
+对于所有数据，保证 $1\le T\le 10^5$，$2\le n,\sum n\le 10^6$，$0\le a_i < 2^{64}$。
+
+\textbf{本题采用捆绑测试}，各子任务特殊限制如下：
+
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        \specialrule{2pt}{0em}{0em}
+        子任务编号 & $\sum n\le$  & $V<$ & 分值 \\
+        \specialrule{1pt}{0em}{0em}
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $1$ & $5000$ & $2^{64}$ & $12$ \\
+        \cline{1-1}\cline{2-2}\cline{3-3}\cline{4-4}
+        $2$ & \multirow{2}{*}{$10^6$} & $2^5$ & $32$ \\
+        \cline{1-1}\cline{3-3}\cline{4-4}
+        $3$ &  & $2^{64}$ & $56$ \\
+        \specialrule{2pt}{0em}{0em}
+    \end{tabular}
+\end{center}
+
+\end{document}

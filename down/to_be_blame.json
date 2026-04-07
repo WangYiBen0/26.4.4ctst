@@ -1,0 +1,57 @@
+{
+  "contest": "CPS-X 2026",
+  "discription": "If anything breaks, it's one of these people's fault.",
+  "背锅人": [
+    {
+      "name": "W1ngD1nGa5ter",
+      "identity": "组题人，常年离线，不建议找他",
+      "contact": {
+        "luogu": "521554",
+        "qq": "2183186106",
+        "github": "WangYiben0",
+      },
+    },
+    {
+      "name": "Gold",
+      "identity": "每道题的出题人，太牛了，不建议找他",
+      "contact": {
+        "luogu": "345930",
+      },
+    },
+    {
+      "name": "lxl",
+      "identity": "主要验题人",
+      "contact": {
+        "luogu": "876122",
+      },
+    },
+    {
+      "name": "ganqihao",
+      "identity": "发完 Problem.pdf 之后直接给我屏蔽了，坏人",
+      "contact": {
+        "luogu": "834895",
+      },
+    },
+    {
+      "name": "yyy",
+      "identity": "AK King, 玩不到三角符文导致的",
+      "contact": {
+        "luogu": "641953",
+      },
+    },
+    {
+      "name": "LuZhuti",
+      "identity": "262爷",
+      "contact": {
+        "734502",
+      },
+    },
+    {
+      "name": "yaoyuchen",
+      "identity": "吉祥物，不建议找她",
+      "contact": {
+        "luogu": "612070",
+      },
+    },
+  ]
+}

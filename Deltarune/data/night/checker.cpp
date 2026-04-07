@@ -1,44 +1,66 @@
-// #include "testlib.h"
 #include "testlib_for_lemons.h"
 #include <vector>
 
-constexpr int N = 19, LIM = 3.2e6;
+constexpr int LIMITATION = 3'200'000;
 
-void solve() {
-  int n = inf.readInt();
-  std::vector<int> p(1 << n);
-  for (int i = 0; i < (1 << n); ++i)
-    p[i] = inf.readInt();
-  std::vector<int> q(1 << n);
-  for (int i = 0; i < (1 << n); ++i)
-    q[i] = inf.readInt();
-  int m = ouf.readInt(0, LIM);
-  ouf.readEoln();
-  for (int i = 1; i <= m; ++i) {
-    const int x = ouf.readInt(0, (1 << n) - 1);
-    ouf.readSpace();
-    const int y = ouf.readInt(0, (1 << n) - 1);
-    ouf.readEoln();
-    if (x == y)
-      quitf(_wa, "fail to swap: i = j");
-    if ((p[x] ^ p[y]) > (x ^ y))
-      quitf(_wa, "fail to swap: p_i \\oplus p_j > i \\oplus j");
-    std::swap(p[x], p[y]);
-  }
-  for (int i = 0; i < (1 << n); ++i) {
-    if (p[i] != q[i])
-      quitf(_wa, "fake method: p[%d]=%d but q[%d]=%d", i, p[i], i, q[i]);
-  }
-}
-
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) noexcept {
   // registerTestlibCmd(argc, argv);
   registerLemonChecker(argc, argv);
-  int T = inf.readInt();
-  for (int i = 1; i <= T; ++i) {
-    setTestCase(i);
-    solve();
+
+  const int T = inf.readInt();
+
+  for (int t = 0; t < T; ++t) {
+    setTestCase(t + 1);
+
+    const int n = inf.readInt();
+    const unsigned size = 1u << n;
+
+    std::vector<unsigned> p(size);
+    for (unsigned i = 0; i < size; ++i) {
+      p[i] = inf.readInt();
+    }
+
+    std::vector<unsigned> q(size);
+    for (unsigned i = 0; i < size; ++i) {
+      q[i] = inf.readInt();
+    }
+
+    const unsigned m = ouf.readInt(0, LIMITATION, "m");
+    ouf.readEoln();
+
+    for (unsigned i = 0; i < m; ++i) {
+      const unsigned x = ouf.readInt(0, size - 1, "x");
+      ouf.readSpace();
+      const unsigned y = ouf.readInt(0, size - 1, "y");
+      ouf.readEoln();
+
+      if (x == y) {
+        quitf(_wa, "Step %d: indices cannot be the same (x = y = %d)", i + 1,
+              x);
+      }
+
+      if ((p[x] ^ p[y]) > (unsigned(x ^ y))) {
+        quitf(_wa,
+              "Step %d: invalid swap. p[%d]=%u, p[%d]=%u. Condition "
+              "(p[x]^p[y]) <= (x^y) failed.",
+              i + 1, x, p[x], y, p[y]);
+      }
+
+      std::swap(p[x], p[y]);
+    }
+
+    for (unsigned i = 0; i < size; ++i) {
+      if (p[i] != q[i]) {
+        quitf(_wa,
+              "Final permutation does not match q at index %d. Expected %u, "
+              "found %u.",
+              i, q[i], p[i]);
+      }
+    }
   }
-  quitf(_ok, "Good job!");
+
+  ouf.readEof();
+
+  quitf(_ok, "%d test cases passed", T);
   return 0;
 }
