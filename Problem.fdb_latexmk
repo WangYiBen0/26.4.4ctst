@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1775403504.34005 "Problem.xdv" "Problem.pdf" "Problem" 1775403504.55051 0
-  "Problem.xdv" 1775403504.22438 121788 ee5844967c4c8933b16ee1d6e5d978cc "xelatex"
+["xdvipdfmx"] 1775542512.56455 "Problem.xdv" "Problem.pdf" "Problem" 1775542513.22043 0
+  "Problem.xdv" 1775542512.33974 121788 f764daa1b4fa87298a495d36971090d8 "xelatex"
   (generated)
   "Problem.pdf"
   (rewritten before read)
-["xelatex"] 1775403502.83304 "Problem.tex" "Problem.xdv" "Problem" 1775403504.54842 0
+["xelatex"] 1775542491.31922 "Problem.tex" "Problem.xdv" "Problem" 1775542513.21652 0
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/fonts/map/fontname/texfonts.map" 1 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/fonts/tfm/adobe/zapfding/pzdr.tfm" 1 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -212,16 +212,16 @@
   "/nix/store/10phrhvgxyw4aj6dqdda4hlv2fc7xh66-texlive-2025-r77567-env/tex/xelatex/xecjk/xeCJKfntef.sty" 1 39577 b470f8a1dbecc9c45c9bf05ca7db9188 ""
   "/nix/store/d4pm16gh9k3zi16is2wn6pchkhn15f6n-texlive-2025-r77567-env/share/texmf-var/web2c/texmf.cnf" 1 44061 7baf0b50b984dfb59e9e48a04e58adf8 ""
   "/nix/store/d4pm16gh9k3zi16is2wn6pchkhn15f6n-texlive-2025-r77567-env/share/texmf-var/web2c/xetex/xelatex.fmt" 1 5948623 5d2c7e3f7c50a047438df5a60271126e ""
-  "Chapter_1_icon.png" 1774782367.00148 332 279d56ebf96df652538c347c456f14cd ""
-  "Chapter_2_icon.png" 1774782367.00148 480 d12cc70d26ff707ac30d75c71f570ee2 ""
-  "Chapter_3_icon.png" 1774782367.00148 2792 2563de879a3a95bc2556660ffa4c51cc ""
-  "Chapter_4_icon.png" 1774782367.00148 2825 66caa443ea42bc92aeaa3028d2476af9 ""
-  "Deltarune_Wiki_logo.png" 1775393243.1323 1541 c0cda24f8b4c02f8146183a5a9f3dccd ""
-  "Deltarune_logo.pdf" 1775393243.1333 1401 cbcb9a8ccdaa68ddc79db3aad2d3104c ""
-  "Deltarune_logo.pdf_tex" 1775393243.1333 2075 c0a46305a711e28662255a9f4745394c ""
-  "Problem.aux" 1775403504.22338 5097 13984e3d434a515e180e6ba838e0f8f0 "xelatex"
-  "Problem.out" 1775403504.22338 3411 bb22e27d0d6ccbbf27d85a221f2cf7e6 "xelatex"
-  "Problem.tex" 1775403501.95959 23350 135caf52714c332145c8b7d60b3583bc ""
+  "Chapter_1_icon.png" 1743862846 332 279d56ebf96df652538c347c456f14cd ""
+  "Chapter_2_icon.png" 1743863041 480 d12cc70d26ff707ac30d75c71f570ee2 ""
+  "Chapter_3_icon.png" 1749137038 2792 2563de879a3a95bc2556660ffa4c51cc ""
+  "Chapter_4_icon.png" 1749137101 2825 66caa443ea42bc92aeaa3028d2476af9 ""
+  "Deltarune_Wiki_logo.png" 1774961963.59369 1541 c0cda24f8b4c02f8146183a5a9f3dccd ""
+  "Deltarune_logo.pdf" 1774961963.59885 1401 cbcb9a8ccdaa68ddc79db3aad2d3104c ""
+  "Deltarune_logo.pdf_tex" 1774961963.59369 2075 c0a46305a711e28662255a9f4745394c ""
+  "Problem.aux" 1775542512.33774 5097 13984e3d434a515e180e6ba838e0f8f0 "xelatex"
+  "Problem.out" 1775542512.33974 3411 bb22e27d0d6ccbbf27d85a221f2cf7e6 "xelatex"
+  "Problem.tex" 1775542485.52709 23350 7a7a8b56d69ce4b779c7edf8d20a814b ""
   (generated)
   "Problem.aux"
   "Problem.log"

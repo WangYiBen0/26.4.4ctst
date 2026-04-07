@@ -1,0 +1,90 @@
+xaue1_1.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 1
+xaue1_2.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 1
+xaue1_3.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 1
+xaue1_4.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 1
+xaue2_1.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 24
+  subtaskId: 2
+xaue2_2.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 24
+  subtaskId: 2
+xaue2_3.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 24
+  subtaskId: 2
+xaue2_4.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 24
+  subtaskId: 2
+xaue3_1.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 3
+xaue3_2.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 3
+xaue3_3.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 3
+xaue3_4.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 3
+xaue3_5.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 3
+xaue3_6.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 12
+  subtaskId: 3
+xaue4_1.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 52
+  subtaskId: 4
+xaue4_2.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 52
+  subtaskId: 4
+xaue4_3.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 52
+  subtaskId: 4
+xaue4_4.in:
+  timeLimit: 2000
+  memoryLimit: 524288
+  score: 52
+  subtaskId: 4

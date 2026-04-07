@@ -1,8 +1,24 @@
-T4
+# CPS-P Solution.md
+
+## Chapter 1: The Beginning (`begin`)
+
+---
+
+## Chapter 2: The Cyber's World (`cyber`)
+
+---
+
+## Chapter 3: Late Night (`night`)
+
+---
+
+## Chapter 4: Prophecy (`prophecy`)
 
 link:
 https://www.luogu.com.cn/problem/P13685
 【MX-X16-T3】「DLESS-3」XOR and Impossible Problem
+
+---
 
 难度：黄  
 算法：思路简单 Ad-hoc 好题  
